@@ -5,26 +5,21 @@ class UsuarioController {
       
         try {
 
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-            myHeaders.append("Cookie", "cookiesession1=678A3E195EE55E34037D53FB092A2B01");
-
-            var urlencoded = new URLSearchParams();
-            urlencoded.append("login", "44266737807");
-            urlencoded.append("senha", "unimed");
-
-            const uri = 'https://api-benef-hml.unimednatal.com.br/usuarios/logar'
-            const response = await fetch(uri, {
-                method: 'POST',
-                headers:  myHeaders,
-                body: urlencoded
+            const response = await fetch('https://api-benef-hml.unimednatal.com.br/usuarios/logar', {
+                method: "POST", // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    "Content-Type": "application/json",
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: JSON.stringify({login: '44266737807', senha: 'unimed'}), // body data type must match "Content-Type" header
             });
 
             console.log("User Autenticado: ")
-
             console.log(response.status);
+            const res = await response.json()
+            console.log(res);
 
-            if (response.status == 200) {
+            if (res.Data.Result == 1) {
                 const credentials = await response.json();
                 console.log(credentials);
                 return credentials;

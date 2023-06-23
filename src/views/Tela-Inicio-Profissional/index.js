@@ -11,13 +11,8 @@ const name = "Dr. Clara Guedes";
 const list = [
   
   {
-    id:  "Autorização",
-    nome: "Cliente Unimed",
-    clinica: "Prestador"
-  },
-  {
     id: 1,
-    nome: "Osvaldo Melo",
+    nome: "Osvaldo Melo Junior",
     clinica: "Med+"
   },
   {
@@ -35,10 +30,15 @@ const list = [
     nome: "Raphael Reis",
     clinica: "Unimed"
   },
+  {
+  id: 5,
+  nome: "Rafinha",
+  clinica: "Unimed"
+  },
 ]
 
 
-export default function TelaInicioProfissional({navigation,}) {
+export default function TelaInicioProfissional({navigation}) {
   return (
     <View style={styles.formaContexto}>
       <View>
@@ -50,18 +50,19 @@ export default function TelaInicioProfissional({navigation,}) {
       <View>
       <Text style={styles.textButton3}>Buscar Autorizações</Text>
       <FontAwesome5 style={styles.icon5} name="caret-square-down" size={26} color="#00CED1"/>
-     
-   
       </View>
-  
       <FlatList
+        showsVerticalScrollIndicator={false}
         style={styles.list}
         data={list}
-        keyExtractor={ () => String.id}
+        keyExtractor={(item) => {
+          item.id
+        }}
         showsVerticalScroollIndicator={false}
-        renderItem={({item}) => <ListAutorizacao data={item}/>}
+        renderItem={({item}) => 
+        <ListAutorizacao props={item}/>}
+    
         />
-       
       <View >
       <FontAwesome5 style={styles.icon2} name="plus" size={20} color="cyan" />
         <Text style={styles.textTitle4}>Nº TOTAL DE ATENDIMENTO(S)</Text>

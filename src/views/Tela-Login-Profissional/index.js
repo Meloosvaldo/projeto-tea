@@ -4,20 +4,40 @@ import styles from './style';
 import {Feather} from 'react-native-vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 
+import UsuarioController from '../../api/user_request';
+
 export default function TelaLoginProfissional({navigation}) {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
+  //const [isLoading, setLoading] = useState(false);
   const [textButton] = useState('Acessar');
   const [mensagemErro, setMensagemErro] = useState("");
   const [loginSenhaErro, setLoginSenhaErro] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
+  var controller = new UsuarioController();
+
+  const authUserMod = async () => {
+    try {
+      // setLoading(true)
+      credentials = controller.authUser(login,senha);
+      console.log(credentials)
+      if(credentials != null){
+        navigation.navigate('TelaInicioProfissional', { credentials: credentials}) ;
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+
+    }
+  }
 
   function verificarLogin() {
     if(login == null && senha == null){
       Vibration.vibrate();
         setMensagemErro("campo obrigatório*")
         setLoginSenhaErro(null)
+
     }
    };
    
@@ -71,7 +91,7 @@ export default function TelaLoginProfissional({navigation}) {
         placeholder="Login"
         onChangeText={setLogin}
         value={login}
-        maxLength={7}
+        maxLength={20}
         
       />
        <Text style={styles.msgErro}>{mensagemErro}</Text>
@@ -81,7 +101,7 @@ export default function TelaLoginProfissional({navigation}) {
         placeholder="Senha"
         onChangeText={setSenha}
         value={senha}
-        maxLength={3}
+        maxLength={20}
         secureTextEntry={!mostrarSenha}
       />
        <Text style={styles.msgErro}>{mensagemErro}</Text>
@@ -94,9 +114,7 @@ export default function TelaLoginProfissional({navigation}) {
       
       <TouchableOpacity 
             style={styles.buttonAcessar}
-            onPress={() => {
-              validarLogin()
-            }}
+            onPress={authUserMod}
             >
             <Text style={styles.textButtonAcessar}>{textButton}</Text>
             

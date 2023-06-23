@@ -36,7 +36,7 @@ textTitle3: {
   fontSize: 20,
 },
 textTitle4: {
-  marginLeft: 25,
+  marginLeft: 20,
   marginBottom: 1,
   color: "#00CED1",
   fontSize: 15,
@@ -57,7 +57,7 @@ buttonPerfil: {
 icon1: {
   flexDirection: 'row',
   marginRight: 1,
-  bottom: 600,
+  bottom: 580,
   left: 150,
 },
 icon2: {
@@ -86,8 +86,8 @@ list: {
 img: {
   flexDirection: "row",
   resizeMode: "stretch",
-  width: 380, 
-  height: 190,
+  width: 390, 
+  height: 160,
 },
 textButton3: {
     flexDirection: "row",

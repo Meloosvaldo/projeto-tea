@@ -35,7 +35,13 @@ const list = [
   nome: "Rafinha",
   clinica: "Unimed"
   },
-]
+  {
+    id: 6,
+    nome: "Fabio",
+    clinica: "Unimed"
+    },
+];
+
 
 
 export default function TelaInicioProfissional({navigation}) {
@@ -54,13 +60,12 @@ export default function TelaInicioProfissional({navigation}) {
       <FlatList
         showsVerticalScrollIndicator={false}
         style={styles.list}
-        data={list}
-        keyExtractor={(item) => {
-          item.id
-        }}
+        data={list}      
         showsVerticalScroollIndicator={false}
         renderItem={({item}) => 
         <ListAutorizacao props={item}/>}
+
+        
     
         />
       <View >
@@ -74,7 +79,7 @@ export default function TelaInicioProfissional({navigation}) {
       />
       <TouchableOpacity 
         onPress={()=> navigation.navigate('TelaPerfilProfissional')}>
-           <FontAwesome5 style={styles.icon1} name="times-circle" size={20} color="gray" />
+           <FontAwesome5 style={styles.icon1} name="times-circle" size={22} color="gray" />
     </TouchableOpacity>
     <FontAwesome5 style={styles.icon4} name="id-badge" size={40} color="cyan" />
     </View> 

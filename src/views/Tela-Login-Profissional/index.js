@@ -104,8 +104,14 @@ export default function TelaLoginProfissional({navigation}) {
       </View>
       <View>
         <Text style={styles.msgCS1}>Não possui cadastro? Cadastre-se aqui</Text>
-        <Text style={styles.msgCS2}>Esqueceu a senha? Recupere aqui</Text>
+        
+        <TouchableOpacity 
+        onPress={()=> navigation.navigate('RecuperacaoSenha')}>
+         <Text style={styles.msgCS2}>Esqueceu a senha? Recupere aqui</Text>  
+        </TouchableOpacity>
+        
         <Text style={styles.msgCS3}>Entre utilizando sua impressão digital</Text>
+    
       </View>
       
       <FontAwesome5 style={styles.icon4} name="fingerprint" size={60} color="black"

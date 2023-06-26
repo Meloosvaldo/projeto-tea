@@ -3,23 +3,23 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-export default function ListAutorizacao({data}) {
+export default function ListAutorizacao({props}) {
   const navigation = useNavigation(); 
   
   return (
    <TouchableOpacity style={styles.container}>
    <View style={styles.content}>
-   <FontAwesome5 style={styles.icon1} name="check-circle" size={20} color="black" />
+   <FontAwesome5 style={styles.icon1} name="check-circle" size={20} color="gray" />
    <Text style={styles.list1} 
-   onPress={()=> navigation.navigate('TelaPerfilProfissional')}>{data.id}</Text>
-  
+   onPress={()=> navigation.navigate('TelaPerfilProfissional')}>{props.id}</Text>
+    
    <Text 
    style={styles.list2}
-   onPress={()=> navigation.navigate('TelaPerfilProfissional')}>{data.nome}</Text>
+   onPress={()=> navigation.navigate('TelaPerfilProfissional')}>{props.nome}</Text>
 
    <Text 
    style={styles.list3}
-   onPress={()=> navigation.navigate('TelaPerfilProfissional')}>{data.clinica}</Text>
+   onPress={()=> navigation.navigate('TelaPerfilProfissional')}>{props.clinica}</Text>
   
    </View>
    </TouchableOpacity>
@@ -41,41 +41,36 @@ const styles = StyleSheet.create({
      marginBottom: 15,
     },
     list1:{
-      color: "black",
+      color: "gray",
       fontWeight: "bold",
       fontSize: 14, 
       paddingLeft: 15,
       margin: 2,
       marginLeft: 10,
+      width: "10%",
   },
     list2:{
-        color: "#000000",
+        color: "gray",
         fontWeight: "bold",
         fontSize: 14, 
         paddingLeft: 20,
         margin: 2,
         marginLeft: 10,
+        width: "40%",
     },
     list3:{
-      color: "#000000",
+      color: "red",
       fontWeight: "bold",
       fontSize: 14, 
       paddingLeft: 42,
       margin: 2,
       marginLeft: 2,
       marginRight: 30,
-    },
-    list4:{
-      color: "#00CED1",
-      fontWeight: "bold",
-      fontSize: 14, 
-      paddingLeft: 25,
-      margin: 2,
-      marginLeft: 2,
-      marginRight: 10,
+      width: "30%",
     },
     icon1: {
-      paddingRight: 18,
+      marginLeft: 50,
+      paddingTop: 5,
   },
 
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Text, TouchableOpacity, Vibration, Image, Keyboard, Pressable } from 'react-native';
 import styles from './style';
 import {Feather} from 'react-native-vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons'; 
 
 export default function TelaLoginProfissional({navigation}) {
   const [login, setLogin] = useState('');
@@ -104,12 +104,18 @@ export default function TelaLoginProfissional({navigation}) {
       </View>
       <View>
         <Text style={styles.msgCS1}>Não possui cadastro? Cadastre-se aqui</Text>
-        <Text style={styles.msgCS2}>Esqueceu a senha? Recupere aqui</Text>
-        <Text style={styles.msgCS3}>Entre utilizando sua impressão digital</Text>
+        
+        <TouchableOpacity 
+        onPress={()=> navigation.navigate('RecuperacaoSenha')}>
+         <Text style={styles.msgCS2}>Esqueceu a senha? Recupere aqui</Text>  
+        </TouchableOpacity>
+        
+        <Text style={styles.msgCS3}>Entre utilizando sua IdFoto</Text>
+    
       </View>
-      
-      <FontAwesome5 style={styles.icon4} name="fingerprint" size={60} color="black"
+      <FontAwesome style={styles.icon4} name="id-badge" size={55} color="gray"
        onPress={()=> navigation.navigate('CameraProfissional')} /> 
+       
 
        
     </Pressable>

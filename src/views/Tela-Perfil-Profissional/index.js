@@ -25,7 +25,7 @@ export default function TelaPerfilProfissional({navigation}) {
     
     <TouchableOpacity 
         style={styles.buttonPerfil}
-        //onPress={()=> navigation.navigate('')}
+        //onPress={()=> navigation.navigate('RecuperacaoSenha')}
         >
          <FontAwesome5 style={styles.icon2} name="user-tie" size={30} color="white" />
         <Text style={styles.textButtonPerfil}>Beneficiário</Text> 

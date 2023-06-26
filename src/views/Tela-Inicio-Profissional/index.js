@@ -11,13 +11,8 @@ const name = "Dr. Clara Guedes";
 const list = [
   
   {
-    id:  "Autorização",
-    nome: "Cliente Unimed",
-    clinica: "Prestador"
-  },
-  {
     id: 1,
-    nome: "Osvaldo Melo",
+    nome: "Osvaldo Melo Junior",
     clinica: "Med+"
   },
   {
@@ -35,46 +30,60 @@ const list = [
     nome: "Raphael Reis",
     clinica: "Unimed"
   },
-]
+  {
+  id: 5,
+  nome: "Rafinha",
+  clinica: "Unimed"
+  },
+  {
+    id: 6,
+    nome: "Fabio",
+    clinica: "Unimed"
+    },
+];
 
 
-export default function TelaInicioProfissional({navigation,}) {
+
+export default function TelaInicioProfissional({navigation}) {
   return (
     <View style={styles.formaContexto}>
       <View>
         <Text style={styles.textClinica}>Clínica Med+</Text>
       </View>
+      <Image
+        source={require('./images/profissional.jpg')}
+        style={styles.img2}
+      />
       <View>
         <Text style={styles.textTitle2}>{name}</Text>
       </View>
       <View>
       <Text style={styles.textButton3}>Buscar Autorizações</Text>
       <FontAwesome5 style={styles.icon5} name="caret-square-down" size={26} color="#00CED1"/>
-     
-   
       </View>
-  
       <FlatList
+        showsVerticalScrollIndicator={false}
         style={styles.list}
-        data={list}
-        keyExtractor={ () => String.id}
+        data={list}      
         showsVerticalScroollIndicator={false}
-        renderItem={({item}) => <ListAutorizacao data={item}/>}
+        renderItem={({item}) => 
+        <ListAutorizacao props={item}/>}
+
+        
+    
         />
-       
       <View >
       <FontAwesome5 style={styles.icon2} name="plus" size={20} color="cyan" />
         <Text style={styles.textTitle4}>Nº TOTAL DE ATENDIMENTO(S)</Text>
     
       </View>
       <Image
-        source={require('./grafico.jpeg')}
+        source={require('./images/grafico.jpeg')}
         style={styles.img}
       />
       <TouchableOpacity 
         onPress={()=> navigation.navigate('TelaPerfilProfissional')}>
-           <FontAwesome5 style={styles.icon1} name="times-circle" size={20} color="gray" />
+           <FontAwesome5 style={styles.icon1} name="times-circle" size={22} color="gray" />
     </TouchableOpacity>
-    <FontAwesome5 style={styles.icon4} name="id-badge" size={40} color="cyan" />
     </View> 
 )};

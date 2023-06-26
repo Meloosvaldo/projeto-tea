@@ -1,16 +1,17 @@
 import { Camera, CameraType } from 'expo-camera';
 import { useState, useRef  } from 'react';
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Modal, Image } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons';
 
-export default function CameraProfissional() {
+
+export default function CameraProfissional({navigation}) {
   const [type, setType] = useState(CameraType.back);
   const [permission, requestPermission] = Camera.useCameraPermissions();
   const camRef = useRef(null);
   const [capturedPhoto, setCapturedPhoto] = useState(null)
   const [ open, setOpen] = useState(false)
   
- if(requestPermission === null){
+ if(requestPermission === true){
   return <View/>
 }
 if(requestPermission === false){
@@ -63,6 +64,13 @@ if(requestPermission === false){
       </TouchableOpacity>
         <Image style={styles.imgPhoto} source={{ uri : capturedPhoto}}/>
       </View>
+      <TouchableOpacity 
+        style={styles.buttonPerfil}
+        onPress={()=> navigation.navigate('TelaInicioProfissional')}
+        >
+        <Text style={styles.textButtonPerfil}>OK</Text> 
+         
+    </TouchableOpacity>
       </Modal>
       )}
     </SafeAreaView>
@@ -115,19 +123,36 @@ const styles = StyleSheet.create({
   }, 
   closeButton1: {
     position: "absolute",
-    top: 80,
+    top: 100,
     right: 2,
     margin: 10,
   }, 
   closeButton2: {
     position: "absolute",
-    top: 78,
+    top: 100,
     right: 80,
     margin: 10,
   }, 
   imgPhoto: {
     width: "100%",
     height: 400,
-  }
-
+  },
+  buttonPerfil: {
+    position: "absolute",
+    backgroundColor: "#00CED1",
+    height: 50,
+    width: 100,
+    marginTop: 620,
+    marginLeft: 150,
+    marginBottom:20,
+    alignItems:"center",
+    justifyContent:"center",
+    elevation: 4,
+    borderRadius: 50,
+    fontWeight: "bold",
+},
+  textButtonPerfil:{
+    fontSize: 20,
+    color: "#ffffff",
+}, 
 });

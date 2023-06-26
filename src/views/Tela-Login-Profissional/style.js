@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
       fontSize: 12,
       color: "#00CED1",
       justifyContent: "center",
-      paddingTop: 90,
-      paddingLeft: 70,
+      paddingTop: 80,
+      paddingLeft: 100,
     },
     msgErro:{
       fontSize: 10,

@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     container: {
         width: "100%",
         height: "100%",
-        bottom: 10,
+        bottom: 0,
         alignItems: "center",
         backgroundColor: "#ffffff"
 

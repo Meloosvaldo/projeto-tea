@@ -25,7 +25,7 @@ textTitle2: {
   marginBottom: 60,
   color: "black",
   fontSize: 22,
-  top: 35,
+  top: 15,
 },
 textTitle3: {
   flexDirection: "row",
@@ -57,7 +57,7 @@ buttonPerfil: {
 icon1: {
   flexDirection: 'row',
   marginRight: 1,
-  bottom: 580,
+  bottom: 630,
   left: 150,
 },
 icon2: {
@@ -89,12 +89,21 @@ img: {
   width: 390, 
   height: 160,
 },
+img2: {
+  flexDirection: "row",
+  borderRadius: 90,
+  width: 50, 
+  height: 50,
+  marginTop: 1,
+  marginRight: 210,
+ 
+},
 textButton3: {
-    flexDirection: "row",
-    marginBottom: 1,
-    color: "#00CED1",
-    fontSize: 20,
-    marginRight: 100,
+  flexDirection: "row",
+  marginBottom: 1,
+  color: "#00CED1",
+  fontSize: 20,
+  marginRight: 100,
   },
 });
   

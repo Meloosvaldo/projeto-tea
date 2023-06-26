@@ -50,6 +50,10 @@ export default function TelaInicioProfissional({navigation}) {
       <View>
         <Text style={styles.textClinica}>Clínica Med+</Text>
       </View>
+      <Image
+        source={require('./images/profissional.jpg')}
+        style={styles.img2}
+      />
       <View>
         <Text style={styles.textTitle2}>{name}</Text>
       </View>
@@ -74,13 +78,12 @@ export default function TelaInicioProfissional({navigation}) {
     
       </View>
       <Image
-        source={require('./grafico.jpeg')}
+        source={require('./images/grafico.jpeg')}
         style={styles.img}
       />
       <TouchableOpacity 
         onPress={()=> navigation.navigate('TelaPerfilProfissional')}>
            <FontAwesome5 style={styles.icon1} name="times-circle" size={22} color="gray" />
     </TouchableOpacity>
-    <FontAwesome5 style={styles.icon4} name="id-badge" size={40} color="cyan" />
     </View> 
 )};

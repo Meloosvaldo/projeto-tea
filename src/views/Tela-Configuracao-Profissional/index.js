@@ -7,7 +7,7 @@ export default function TelaConfiguracaoProfissional() {
 
 
   return (
-    <View style={{flex: 1, backgroundColor: "pink"}}>
+    <View style={{flex: 1, backgroundColor: "blue"}}>
     </View>
    
   );

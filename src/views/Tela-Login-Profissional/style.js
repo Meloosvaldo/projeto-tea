@@ -54,14 +54,14 @@ const styles = StyleSheet.create({
     },
     icon4: {
       position: 'absolute',
-      right: 170,
+      alignItems: "center",
       top: 540,
     },
     msgCS1: {
       fontSize: 18,
       color: "#00CED1",
       justifyContent: "center",
-      paddingTop: 8,
+      paddingTop: 10,
       paddingLeft: 10,
     },
     msgCS2: {
@@ -74,9 +74,9 @@ const styles = StyleSheet.create({
     msgCS3: {
       fontSize: 12,
       color: "#00CED1",
+      alignItems: "center",
       justifyContent: "center",
-      paddingTop: 80,
-      paddingLeft: 100,
+      paddingTop: 95,
     },
     msgErro:{
       fontSize: 10,
@@ -88,9 +88,9 @@ const styles = StyleSheet.create({
     },
     msgErroLoginSenha:{
       fontSize: 10,
-      color: "black",
+      color: "red",
       fontWeight: "bold",
-      paddingLeft: 100,
+      textAlign: "center",
       paddingBottom: 2,
     },
     boxTitle: {

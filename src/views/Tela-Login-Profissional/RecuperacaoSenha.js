@@ -3,37 +3,61 @@ import { View, Text,  Keyboard, Pressable, TouchableOpacity, StyleSheet, TextInp
 import {Feather} from 'react-native-vector-icons';
  
 
-
-
 export default function RecuperacaoSenha({navigation}) {
-  const [email, setEmail] = useState('');
-  const [mostrarEmail, setMostrarEmail] = useState(false);
+  const [cpf, setCpf] = useState('');
 
+  const passwordRecovery = async () => {
 
+    try {
 
+      const response = await fetch('https://api-benef-hml.unimednatal.com.br/{{url_benef_tasy}}/usuarios/recuperar-senha', {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify({ cpf: cpf}), // body data type must match "Content-Type" header
+      });
+
+      const res = await response.json()
+      console.log(res);
+      console.log(res.Result);
+
+      if (res.Result == 1) {
+        navigation.navigate('TelaInicioProfissional')
+      } else if (res.Result == 0) {
+        setLoginSenhaErro("Login e/ou senha inválido(s)!")
+      }
+      
+
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false)
+    }
+
+  }
 
   return (
     
     <Pressable onPress={Keyboard.dismiss} style={styles.container}>
       
-        <View style={styles.boxTitle}>
-            <Text style={styles.textTitle} >Email para recuperação da senha</Text>
-        </View>
-        <TextInput
-          style={styles.input}
-          placeholder="Email"
-          onChangeText={setEmail}
-          value={email}
-          secureTextEntry={!mostrarEmail}
+      <View style={styles.boxTitle}>
+        <Text style={styles.textTitle} >Insira seu CPF para recuperação da senha</Text>
+      </View>
+      <TextInput
+        style={styles.input}
+        placeholder="CPF"
+        value={cpf}
+        onChangeText={(value) => {setCpf(value)}}
       />
-      <Feather style={styles.icon1} name="mail" size={15} color="#677294"/>
-        <Feather style={styles.icon2} name="eye" size={20}color="#677294"/>
-        <TouchableOpacity 
+      <Feather style={styles.icon1} name="user" size={15} color="#677294"/>
+      <TouchableOpacity 
         style={styles.buttonPerfil}
         onPress={()=> navigation.navigate('TelaLoginProfissional')}
-        >
+      >
         <Text style={styles.textButtonPerfil}>Enviar</Text>    
-    </TouchableOpacity>
+      </TouchableOpacity>
 
     </Pressable>
   );
@@ -58,13 +82,13 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     }, 
     input: {
-        width: "90%",
-        height: 60,
-        alignItems: "center",
-        backgroundColor:"#f5f5f5",
-        paddingLeft: 25,
-        borderRadius: 10,
-       
+      width: "90%",
+      height: 60,
+      alignItems: "center",
+      backgroundColor:"#f5f5f5",
+      marginBottom: 5,
+      paddingLeft: 35,
+      borderRadius: 10,
       },
 
     buttonPerfil: {
@@ -87,8 +111,8 @@ const styles = StyleSheet.create({
     },
     icon1: {
         position: 'absolute',
-        left: 25,
-        top: 190,
+        left: 30,
+        top: 200,
       },
     icon2: {
         position: 'absolute',

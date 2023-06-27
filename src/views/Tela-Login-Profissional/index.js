@@ -57,30 +57,6 @@ export default function TelaLoginProfissional({navigation}) {
         setLoginSenhaErro(null)
     }
   };
-   
-   /*function fazerLogin(){
-    if (login == "a" && senha == 1) {
-        console.log("Login com sucesso!")
-        navigation.navigate('TelaInicioProfissional')
-        setMensagemErro(null)
-        setLoginSenhaErro(null)
-    } else {
-      setLoginSenhaErro("Erro login ou Senha!")
-    }
-  };
-
-   function validarLogin(){
-    if (login != null && senha != null) {
-      fazerLogin()
-      setLogin()
-      setSenha()
-  
-    } else {
-      verificarLogin() 
-      setLoginSenhaErro("")
-      
-    }
-  };*/
 
   return (
 

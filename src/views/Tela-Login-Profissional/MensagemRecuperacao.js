@@ -3,64 +3,22 @@ import { View, Text,  Keyboard, Pressable, TouchableOpacity, StyleSheet, TextInp
 import {Feather} from 'react-native-vector-icons';
  
 
-export default function RecuperacaoSenha({navigation}) {
-  const [cpf, setCpf] = useState('');
-  const [recoveryMessage, setRecoveryMessage] = useState("");
-
-  const passwordRecovery = async () => {
-
-    try {
-      const response = await fetch('https://api-benef-hml.unimednatal.com.br/usuarios/recuperar-senha', {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        headers: {
-          "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify({ login: cpf}), // body data type must match "Content-Type" header
-      });
-
-      const res = await response.json()
-      console.log(res);
-      console.log(res.Result);
-
-
-      if (res.Result == 1) {
-        navigation.navigate('MensagemRecuperacao')
-        //setRecoveryMessage(res.Message)        
-      } else if (res.Result == 0) {
-        setRecoveryMessage("Profissional não encontrado.")
-      }
-
-    } catch (error) {
-      console.error(error);
-    } finally {
-
-    }
-
-  }
-
+export default function MensagemRecuperacao({navigation}) {
+  
   return (
     
     <Pressable onPress={Keyboard.dismiss} style={styles.container}>
       
       <View style={styles.boxTitle}>
-        <Text style={styles.textTitle} >Insira seu CPF para recuperação da senha</Text>
-        <Text style={styles.msgRecuperacao}>{recoveryMessage}</Text>
+        <Text style={styles.msgRecuperacao}>Senha recuperada com sucesso! {'\n'} Verifique seu email para alterar sua senha.</Text>
       </View>
 
       <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          placeholder="CPF"
-          value={cpf}
-          onChangeText={(value) => {setCpf(value)}}
-        />
-        <Feather style={styles.icon1} name="user" size={15} color="#677294"/>
         <TouchableOpacity 
           style={styles.buttonPerfil}
-          onPress={passwordRecovery}
+          onPress={()=> navigation.navigate('TelaLoginProfissional')}
         >
-          <Text style={styles.textButtonPerfil}>Enviar</Text>    
+          <Text style={styles.textButtonPerfil} >Voltar</Text>    
         </TouchableOpacity>
       </View>      
       
@@ -111,11 +69,12 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     msgRecuperacao:{
-      fontSize: 12,
-      color: "red",
+      fontSize: 18,
+      color: "green",
       fontWeight: "bold",
       textAlign: "center",
-      marginBottom: 10,
+      marginTop: 140,
+      
     },
     textButtonPerfil:{
         fontSize: 20,

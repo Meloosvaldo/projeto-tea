@@ -15,6 +15,7 @@ import TelaPerfilProfissional from './src/views/Tela-Perfil-Profissional';
 import TelaLoginProfissional from './src/views/Tela-Login-Profissional';
 import CameraProfissional from './src/camera';
 import RecuperacaoSenha from './src/views/Tela-Login-Profissional/RecuperacaoSenha';
+import MensagemRecuperacao from './src/views/Tela-Login-Profissional/MensagemRecuperacao';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -87,6 +88,7 @@ export default function App() {
        
           }}/>
          <Stack.Screen name="RecuperacaoSenha" component={RecuperacaoSenha} options={{title: ''}}/>
+         <Stack.Screen name="MensagemRecuperacao" component={MensagemRecuperacao} options={{title: ''}}/>
        </Stack.Navigator>
      </NavigationContainer> 
    );

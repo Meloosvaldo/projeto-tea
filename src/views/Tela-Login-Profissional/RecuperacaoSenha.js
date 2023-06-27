@@ -9,14 +9,13 @@ export default function RecuperacaoSenha({navigation}) {
   const passwordRecovery = async () => {
 
     try {
-
-      const response = await fetch('https://api-benef-hml.unimednatal.com.br/{{url_benef_tasy}}/usuarios/recuperar-senha', {
+      const response = await fetch('https://api-benef-hml.unimednatal.com.br/usuarios/recuperar-senha', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
           "Content-Type": "application/json",
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({ cpf: cpf}), // body data type must match "Content-Type" header
+        body: JSON.stringify({ login: cpf}), // body data type must match "Content-Type" header
       });
 
       const res = await response.json()
@@ -24,7 +23,7 @@ export default function RecuperacaoSenha({navigation}) {
       console.log(res.Result);
 
       if (res.Result == 1) {
-        navigation.navigate('TelaInicioProfissional')
+        navigation.navigate('TelaLoginProfissional')
       } else if (res.Result == 0) {
         setLoginSenhaErro("Login e/ou senha inválido(s)!")
       }
@@ -54,7 +53,7 @@ export default function RecuperacaoSenha({navigation}) {
       <Feather style={styles.icon1} name="user" size={15} color="#677294"/>
       <TouchableOpacity 
         style={styles.buttonPerfil}
-        onPress={()=> navigation.navigate('TelaLoginProfissional')}
+        onPress={passwordRecovery}
       >
         <Text style={styles.textButtonPerfil}>Enviar</Text>    
       </TouchableOpacity>

@@ -7,6 +7,9 @@ import { FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ActivityIndicator } from 'react-native';
 
+import Geolocation from 'react-native-geolocation-service';
+
+
 export default function TelaLoginProfissional({navigation}) {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
@@ -50,7 +53,23 @@ export default function TelaLoginProfissional({navigation}) {
 
   }
 
+  function geolocation() {
+    if (hasLocationPermission) {
+      Geolocation.getCurrentPosition(
+          (position) => {
+            console.log(position);
+          },
+          (error) => {
+            // See error code charts below.
+            console.log(error.code, error.message);
+          },
+          { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+      );
+    }
+  }
+
   function verificarLogin() {
+    geolocation()
     if(login == null || senha == null){
       Vibration.vibrate();
         setMensagemErro("Campo obrigatório*")

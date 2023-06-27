@@ -53,23 +53,41 @@ export default function TelaLoginProfissional({navigation}) {
 
   }
 
-  function geolocation() {
-    if (hasLocationPermission) {
-      Geolocation.getCurrentPosition(
-          (position) => {
-            console.log(position);
-          },
-          (error) => {
-            // See error code charts below.
-            console.log(error.code, error.message);
-          },
-          { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
-      );
+  const getLocation = async () => {
+    const hasPermission = await hasLocationPermission();
+
+    if (!hasPermission) {
+      return;
     }
-  }
+
+    Geolocation.getCurrentPosition(
+      position => {
+        setLocation(position);
+        console.log(position);
+      },
+      error => {
+        Alert.alert(`Code ${error.code}`, error.message);
+        setLocation(null);
+        console.log(error);
+      },
+      {
+        accuracy: {
+          android: 'high',
+          ios: 'best',
+        },
+        enableHighAccuracy: highAccuracy,
+        timeout: 15000,
+        maximumAge: 10000,
+        distanceFilter: 0,
+        forceRequestLocation: forceLocation,
+        forceLocationManager: useLocationManager,
+        showLocationDialog: locationDialog,
+      },
+    );
+  };
 
   function verificarLogin() {
-    geolocation()
+    getLocation()
     if(login == null || senha == null){
       Vibration.vibrate();
         setMensagemErro("Campo obrigatório*")

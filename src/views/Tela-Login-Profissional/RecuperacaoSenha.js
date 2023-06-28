@@ -10,7 +10,7 @@ export default function RecuperacaoSenha({navigation}) {
   const passwordRecovery = async () => {
 
     try {
-      const response = await fetch('https://api-benef-hml.unimednatal.com.br/usuarios/recuperar-senha', {
+      const response = await fetch('[URLAPI]/usuarios/recuperar-senha', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
           "Content-Type": "application/json",

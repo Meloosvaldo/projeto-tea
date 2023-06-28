@@ -25,7 +25,7 @@ export default function TelaLoginProfissional({navigation}) {
 
     try {
 
-      const response = await fetch('https://api-benef-hml.unimednatal.com.br/usuarios/logar', {
+      const response = await fetch('[URLAPI]/usuarios/logar', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
           "Content-Type": "application/json",

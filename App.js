@@ -17,6 +17,7 @@ import CameraProfissional from './src/camera';
 import RecuperacaoSenha from './src/views/Tela-Login-Profissional/RecuperacaoSenha';
 import MensagemRecuperacao from './src/views/Tela-Login-Profissional/MensagemRecuperacao';
 
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
   

@@ -2,10 +2,15 @@ import { StyleSheet } from 'react-native';
 
 
 const styles = StyleSheet.create({
-    formaContexto: {
+  container:{
+    flex: 1,
+    backgroundColor: "#ffffff",
+    marginBottom: 1,
+  },  
+  formaContexto: {
       width: "100%",
       height: "100%",
-      bottom: 1,
+      bottom: 40,
       alignItems: "center",
       marginTop: 0,
       backgroundColor: "#ffffff"
@@ -77,6 +82,7 @@ const styles = StyleSheet.create({
       alignItems: "center",
       justifyContent: "center",
       paddingTop: 95,
+     
     },
     msgErro:{
       fontSize: 10,

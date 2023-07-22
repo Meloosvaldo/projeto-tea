@@ -16,9 +16,8 @@ export default function TelaConfiguracaoProfissional() {
 
 const styles = StyleSheet.create({
   container: {
-   width: "50%",
-   height: "50%",
-    justifyContent: "center",
-    alignItems: "center",
+   flex: 1,
+   justifyContent: "center",
+   alignItems: "center",
   }
 })

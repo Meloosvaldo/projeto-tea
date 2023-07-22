@@ -20,6 +20,7 @@ import MensagemRecuperacao from './src/views/Tela-Login-Profissional/MensagemRec
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+//createDrawerNavigator //opção para navegar pela lateral
   
 
 function Tabs() {
@@ -34,7 +35,7 @@ function Tabs() {
         tabBarStyle: {
          backgroundColor: "#fff", 
          paddingBottom: 3,
-          paddingTop: 3,
+          paddingTop: 1,
         }
       }}
       >
@@ -76,12 +77,12 @@ function Tabs() {
 export default function App() {
    return (
      <NavigationContainer>
-       <Stack.Navigator>
+       <Stack.Navigator>  
          <Stack.Screen name="TelaPerfilProfissional" component={TelaPerfilProfissional} 
          options={{title: '' }}/>
          <Stack.Screen name="CameraProfissional" component={CameraProfissional} options={{title: ''}}/>
          <Stack.Screen name="TelaLoginProfissional" component={TelaLoginProfissional} options={{title: ''}}/>
-         <Stack.Screen name="TelaInicioProfissional" component={Tabs} 
+         <Stack.Screen name="TelaInicioProfissional" component={Tabs}  
           options={{title: '',
           headerShown: false,
           headerTitleStyle: {

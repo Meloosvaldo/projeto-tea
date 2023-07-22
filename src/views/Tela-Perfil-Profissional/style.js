@@ -3,30 +3,12 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
 formaContexto: {
-    width: "100%",
-    height: "100%",
+    flex: 1,
     bottom: 1,
     alignItems: "baseline",
     marginTop: 1,
     backgroundColor: "#ffffff",
     },
-buttonPerfil: {
-    backgroundColor: "#00CED1",
-    height: 70,
-    width: 300,
-    marginTop: 40,
-    marginLeft: 50,
-    marginBottom:1,
-    alignItems:"center",
-    justifyContent:"center",
-    elevation: 4,
-    borderRadius: 50,
-    fontWeight: "bold",
-},
-textButtonPerfil:{
-    fontSize: 20,
-    color: "#ffffff",
-}, 
 img1: {
     flexDirection: "row",
     resizeMode: "cover",
@@ -43,13 +25,38 @@ img2: {
     height: 88,
     marginTop: 16,
     marginLeft: 25,
-}, 
+},
+boxPerfil: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: (777,777,777),
+    marginRight: 20,
+    marginTop: 80,
+   borderRadius: 10,
+},
+buttonPerfil: {
+    backgroundColor: "#00CED1",
+    height: 70,
+    width: 300,
+    marginTop: 40,
+    marginLeft: 50,
+    marginBottom:1,
+    alignItems:"center",
+    justifyContent:"center",
+    elevation: 4,
+    borderRadius: 50,
+    fontWeight: "bold",
+},
+textButtonPerfil:{
+    fontSize: 20,
+    color: "#ffffff",
+},  
 textTitle:{
     height: 40,
-    marginLeft: 65,
+    marginLeft: 58,
     color: "#00CED1",
     alignItems: "center",
-    fontSize: 22,
+    fontSize: 24,
     marginTop: 50,
 }, 
 buttonVersao: {
@@ -67,14 +74,6 @@ buttonVersao: {
 textButtonVersao:{
     fontSize: 18,
     color: "#ffffff",
-},
-boxPerfil: {
-    width: "100%",
-    height: "100%",
-    backgroundColor: (777,777,777),
-    marginRight: 20,
-    marginTop: 80,
-   borderRadius: 10,
 },
 icon1: {
     position: 'absolute',

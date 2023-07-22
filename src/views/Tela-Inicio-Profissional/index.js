@@ -63,6 +63,7 @@ export default function Images() {
 
   return (
     <View style={styles.container}>
+     
     <View>
     <TouchableOpacity onPress={handleImagePicker} style={{ marginTop: 10 }}>
         <Text style={styles.textTitle1}> Trocar Foto </Text>

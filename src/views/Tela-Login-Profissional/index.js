@@ -96,9 +96,7 @@ export default function TelaLoginProfissional({navigation}) {
   };
 
   return (
-
-
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       {isLoading
       ?<ActivityIndicator/>
       :<View onPress={Keyboard.dismiss} style={styles.formaContexto}>

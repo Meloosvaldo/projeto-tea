@@ -25,17 +25,22 @@ const styles = StyleSheet.create({
        },
        icon1: {
         flexDirection: "row",
-        bottom: 122,
-        left: 160,
+        bottom: 100,
+        left: 140,
       },
       icon2: {
+        flexDirection: "row",
+        bottom: 125,
+        left: 180,
+      },
+      icon3: {
         flexDirection: "row",
         bottom: 100,
         left: 105,
       },
-      icon3: {
+      icon4: {
         flexDirection: "row",
-        bottom: 85,
+        bottom: 95,
         left: 150,
       },
       list: {
@@ -71,13 +76,13 @@ const styles = StyleSheet.create({
       textTitle5: {
         color: "#00CED1",
         left: 50,
-        bottom: 60,
+        bottom: 40,
         fontSize: 20,
       },
       imgGrafico: {
         resizeMode: "stretch",
         width: 400, 
-        height: 170,
+        height: 130,
       },
 
 })

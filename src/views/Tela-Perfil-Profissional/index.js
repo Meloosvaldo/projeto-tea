@@ -32,7 +32,7 @@ export default function TelaPerfilProfissional({navigation}) {
        </TouchableOpacity>
        <TouchableOpacity 
         style={styles.buttonPerfil}
-        onPress={()=> navigation.navigate('TelaLoginProfissional')}
+        onPress={()=> navigation.navigate('listAutorizacao')}
         >
         <Fontisto style={styles.icon1} name="doctor" size={30} color="white" />
         <Text style={styles.textButtonPerfil}>Profissional</Text>    

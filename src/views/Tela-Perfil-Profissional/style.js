@@ -63,7 +63,7 @@ buttonVersao: {
     backgroundColor: "#00CED1",
     height: 60,
     width: 150,
-    marginTop: 100,
+    marginTop: 198,
     marginLeft: 130,
     marginBottom:5,
     alignItems:"center",

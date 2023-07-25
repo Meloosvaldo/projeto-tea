@@ -6,7 +6,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import styles from './style';
 import ListAutorizacao from './listAutorizacao';
 
-export default function Images() {
+export default function TelaInicioProfissional({navigation}) {
   
   const nome = "Dr. Clara Guedes"
   const clinica= "Clínica X"
@@ -88,6 +88,7 @@ export default function Images() {
       </View>
       <Text style={styles.textTitle2}> {nome} </Text>
       <View>
+      <FontAwesome5 onPress={()=> navigation.navigate('TelaPerfilProfissional')} style={styles.icon4} name="times-circle" size={22} color="red" />
       <FontAwesome5 style={styles.icon1} name="bell" size={26} color="gray" />
       <FontAwesome5 style={styles.icon2} name="bars" size={24} color="cyan" />
       <FontAwesome5 style={styles.icon3} name="clinic-medical" size={26} color="cyan" />
@@ -97,7 +98,7 @@ export default function Images() {
      <View >
      <Text style={styles.textTitle4}>Buscar Autorizações</Text>
      <TouchableOpacity onPress={() => setListVisivel(!listVisivel)} style={{ marginTop: 10 }}>
-     <FontAwesome5 style={styles.icon4} name="caret-square-down" size={30} color="#00CED1"/>
+     <FontAwesome5 style={styles.icon5} name="caret-square-down" size={30} color="#00CED1"/>
       </TouchableOpacity>
      </View>
     {listVisivel && (

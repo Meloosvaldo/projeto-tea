@@ -40,6 +40,11 @@ const styles = StyleSheet.create({
       },
       icon4: {
         flexDirection: "row",
+        bottom: 120,
+        left: 200,
+      },
+      icon5: {
+        flexDirection: "row",
         bottom: 95,
         left: 150,
       },
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
       imgGrafico: {
         resizeMode: "stretch",
         width: 400, 
-        height: 130,
+        height: 90,
       },
 
 })

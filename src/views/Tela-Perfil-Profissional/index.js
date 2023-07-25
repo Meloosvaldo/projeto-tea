@@ -23,6 +23,7 @@ export default function TelaPerfilProfissional({navigation}) {
 
         <View style={styles.boxPerfil}>
         <Text style={styles.textTitle}>Selecione o tipo de usuário</Text>
+
        <TouchableOpacity 
         style={styles.buttonPerfil}
         //onPress={()=> navigation.navigate('RecuperacaoSenha')}
@@ -30,16 +31,20 @@ export default function TelaPerfilProfissional({navigation}) {
          <FontAwesome5 style={styles.icon2} name="user-tie" size={30} color="white" />
         <Text style={styles.textButtonPerfil}>Beneficiário</Text> 
        </TouchableOpacity>
+
        <TouchableOpacity 
         style={styles.buttonPerfil}
-        onPress={()=> navigation.navigate('listAutorizacao')}
+        onPress={()=> navigation.navigate('TelaLoginProfissional')}  
         >
         <Fontisto style={styles.icon1} name="doctor" size={30} color="white" />
-        <Text style={styles.textButtonPerfil}>Profissional</Text>    
+        <Text style={styles.textButtonPerfil}>Profissional</Text> 
+         
        </TouchableOpacity>
+
        <TouchableOpacity 
-        style={styles.buttonVersao}
-        >
+       style={styles.buttonVersao}
+       >
+    
         <Text style={styles.textButtonVersao}>Versão 1.0</Text>    
        </TouchableOpacity>
       </View>
